@@ -142,11 +142,11 @@ Champions и Big Spenders — ~40% клиентов, но ~74% выручки (�
 
 Два листа, подключение к Postgres напрямую (режим Import):
 
-### Лист 1 — Воронка и удержание
-![Дашборд: воронка и удержание](images/dashboard_funnel.png)
-
-### Лист 2 — RFM-сегменты
-![Дашборд: RFM-сегментация](images/dashboard_rfm.png)
+- **Лист 1 «Воронка и удержание»** — KPI-карточки (всего заказов, % доставки,
+  % повторных покупок), воронка исполнения, когортная матрица retention с
+  тепловой картой.
+- **Лист 2 «RFM-сегменты»** — выручка по сегментам, распределение клиентов,
+  treemap долей выручки, ключевые показатели.
 
 Файл: [`powerbi/olist_dashboard.pbix`](powerbi/)
 
@@ -156,7 +156,6 @@ Champions и Big Spenders — ~40% клиентов, но ~74% выручки (�
 
 ```
 olist-funnel-analysis/
-├── data/raw/              # CSV с Kaggle (в .gitignore)
 ├── sql/
 │   ├── 00_schema.sql      # DDL: таблицы, типы, ключи
 │   ├── 01_funnel.sql      # воронка (view v_funnel)
@@ -165,9 +164,11 @@ olist-funnel-analysis/
 │   └── 04_kpi.sql         # сводные KPI (view v_kpi)
 ├── powerbi/
 │   └── olist_dashboard.pbix
-├── .env.example
+├── README.md
 └── .gitignore
 ```
+
+> Данные (CSV с Kaggle) в репозиторий не входят — см. раздел «Как воспроизвести».
 
 ---
 
